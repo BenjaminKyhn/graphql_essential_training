@@ -1,14 +1,14 @@
-import { Friends } from './dbConnectors';
+import {Friends} from './dbConnectors';
 
 // resolver map
 export const resolvers = {
     Query: {
-        getFriend: ({ id }) => {
+        getFriend: ({id}) => {
             return new Friend(id, friendDatabase[id]);
         },
     },
     Mutation: {
-        createFriend: (root, { input }) => {
+        createFriend: (root, {input}) => {
             const newFriend = new Friends({
                 firstName: input.firstName,
                 lastName: input.lastName,
@@ -28,5 +28,14 @@ export const resolvers = {
                 })
             })
         },
+        updateFriend: (root, {input}) => {
+            return new Promise((resolve, object) => {
+                Friends.findOneAndUpdate({_id: input.id}, input, {new: true},
+                    (err, friend) => {
+                        if (err) reject(err)
+                        else resolve(friend)
+                    })
+            })
+        }
     },
 };
