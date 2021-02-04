@@ -13,7 +13,10 @@ export const resolvers = {
                 firstName: input.firstName,
                 lastName: input.lastName,
                 gender: input.gender,
-                email: input.email
+                email: input.email,
+                language: input.language,
+                age: input.age,
+                contacts: input.contacts
             });
 
             newFriend.id = newFriend._id;
