@@ -1,0 +1,1 @@
+Link to tutorial: https://www.linkedin.com/learning/graphql-essential-training
