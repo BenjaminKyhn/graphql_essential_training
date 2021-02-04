@@ -6,16 +6,27 @@ id: ID
 firstName: String
 lastName: String
 gender: String
-email: [Email]!
-}
-
-type Email {
 email: String
+age: Int
 }
 
 type Query {
-friend: Friend
+getFriend(id, ID): Friend
 }
+
+input FriendInput{
+id: ID
+firstName: String
+lastName: String
+gender: String
+email: String
+age: Int
+}
+
+type Mutation {
+createFriend(input: FriendInput): Friend
+}
+
 `)
 
 export default schema
