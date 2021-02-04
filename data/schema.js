@@ -7,6 +7,7 @@ id: ID
 firstName: String
 lastName: String
 gender: Gender
+language: String
 email: String
 age: Int
 contacts: [Contact]
@@ -32,6 +33,7 @@ id: ID
 firstName: String
 lastName: String
 gender: Gender
+language: String
 email: String
 age: Int
 contacts: [ContactInput]
